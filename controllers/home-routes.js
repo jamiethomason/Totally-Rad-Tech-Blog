@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
+//Landing Page -- Tested
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
@@ -33,6 +34,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//Single-Post Route -- In Progress
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -59,7 +61,7 @@ router.get('/post/:id', (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
-
+      console.log(post);
       res.render('single-post', {
         post,
         loggedIn: req.session.loggedIn
@@ -72,10 +74,10 @@ router.get('/post/:id', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
 
   res.render('login');
 });
