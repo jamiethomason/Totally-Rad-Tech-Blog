@@ -1,6 +1,6 @@
 # Totally-Rad-Tech-Blog
 
-Link to Deployed Heroku Site:
+Link to Deployed Heroku Site: https://lit-sea-44220.herokuapp.com/
 
 ## User Story
 ```
